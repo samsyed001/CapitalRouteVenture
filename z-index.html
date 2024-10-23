@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        #clock {
+            font-size: 60px;
+            color: #333;
+            padding: 20px;
+            border: 3px solid #333;
+            border-radius: 10px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+<div id="clock"></div>
+
+<script>
+    // function updateClock() {
+    //     const now = new Date();
+    //     const hours = String(now.getHours()).padStart(2, '0');
+    //     const minutes = String(now.getMinutes()).padStart(2, '0');
+    //     const seconds = String(now.getSeconds()).padStart(2, '0');
+    //     const timeString = `${hours}:${minutes}:${seconds}`;
+    //
+    //     document.getElementById('clock').textContent = timeString;
+    // }
+    //
+    // setInterval(updateClock, 1000);
+    // updateClock();  // Initial call to display clock immediately
+
+    var reference;
+
+    function startClock() {
+        var reference = setInterval(showTime, 1000)
+    }
+
+    function showTime() {
+        document.getElementById('div1').innerHTML = "12:00:00 PM";
+    }
+
+    function stopClock() {
+        clearInterval(reference);
+    }
+</script>
+</body>
+</html>
